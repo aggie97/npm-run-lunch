@@ -1,14 +1,16 @@
+require("dotenv").config();
 // 1. 주요 클래스 가져오기
 const { Client, Events, GatewayIntentBits } = require("discord.js");
 // import discord from "discord.js";
 // import token from "./config.json";
-const { token } = process.env.DISCORD_TOKEN;
+const token = process.env.DISCORD_TOKEN;
 
 if (!token) {
+  console.error("token: ", token);
   console.error("ERROR: DISCORD_TOKEN 환경 변수가 설정되지 않았습니다.");
   process.exit(1); // 토큰이 없으면 프로그램 종료
 }
-
+console.log("current node version:", process.version);
 const fs = require("fs"); // 👈 File System 모듈 추가
 
 const DATA_FILE = "menus.json"; // 데이터 파일명 정의
