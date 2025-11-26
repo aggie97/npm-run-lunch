@@ -113,13 +113,13 @@ client.on("messageCreate", (message) => {
     saveMenus(menus);
 
     // 사용자에게 확인 메시지 전송
-    let replyMessage = `✅ **${newStore}** 메뉴가 추가됐어 덴지쿤! (현재 메뉴 총 ${menus.length}개)`;
+    let replyMessage = `✅ **${store}** 지점이 추가됐어 덴지쿤! (현재 메뉴 총 ${menus.length}개)`;
 
-    if (newMenu) {
-      replyMessage += `\n> 메뉴설명: ${newMenu}`;
+    if (menu) {
+      replyMessage += `\n> 메뉴설명: ${menu}`;
     }
-    if (newUrl) {
-      replyMessage += `\n> URL: ${newUrl}`;
+    if (url) {
+      replyMessage += `\n> URL: ${url}`;
     }
 
     message.reply(replyMessage);
